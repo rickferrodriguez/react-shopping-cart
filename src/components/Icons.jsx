@@ -9,7 +9,6 @@ export function ClearCart () {
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth='2'
-      class='icon icon-tabler icon-tabler-shopping-cart-off'
     >
       <path stroke='none' d='M0 0h24v24H0z' />
       <path d='M4 19a2 2 0 1 0 4 0 2 2 0 1 0-4 0M17 17a2 2 0 1 0 2 2' />

@@ -24,6 +24,16 @@ export function CartProvider ({ children }) {
     ])
   }
 
+  const reduceItemFromCart = product => {
+    const productId = findProductId(product)
+    const newCart = structuredClone(cart)
+    if (newCart[productId].quantity <= 1) return
+
+    newCart[productId].quantity -= 1
+
+    setCart(newCart)
+  }
+
   const removeFromCart = (product) => {
     return setCart(prevState => prevState.filter(item => item.id !== product.id))
   }
@@ -37,6 +47,7 @@ export function CartProvider ({ children }) {
       cart,
       addToCart,
       removeFromCart,
+      reduceItemFromCart,
       clearCart
     }}
     >

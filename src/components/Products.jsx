@@ -1,5 +1,5 @@
 import { useCart } from '../hooks/useCart'
-import { AddToCartIcon } from './Icons'
+import { AddToCartIcon, RemoveFromCartIcon } from './Icons'
 
 export function ItemProducts ({ product, addToCart, isProductInCart, removeFromCart }) {
   const { price, title, thumbnail, description, brand } = product
@@ -30,13 +30,19 @@ export function ItemProducts ({ product, addToCart, isProductInCart, removeFromC
         <button
           onClick={isProductInCart ? removeFromCart : addToCart}
           className={`flex items-center gap-3 px-3 rounded-3xl ${
-            isProductInCart ? 'bg-red-500 hover:bg-red-700' : 'bg-sky-400 hover:bg-sky-600'
+            isProductInCart ? 'bg-red-700 hover:bg-red-800' : 'bg-sky-400 hover:bg-sky-600'
           } font-amulya  hover:cursor-pointer`}
         >
           <span>
-            <AddToCartIcon />
+            {isProductInCart
+              ? <RemoveFromCartIcon />
+              : <AddToCartIcon />}
           </span>
-          Add to Cart
+          {
+            isProductInCart
+              ? 'Remove'
+              : 'Add to Cart'
+          }
         </button>
       </footer>
     </li>

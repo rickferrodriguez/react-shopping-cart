@@ -46,7 +46,7 @@ export function Cart () {
 
       <aside className='peer-checked:flex flex-col gap-7 rounded-l-2xl hidden w-[320px] bg-sky-700 h-full px-2 absolute top-0 right-0'>
         <h2 className='font-amulya text-2xl mt-6'>Order Summary</h2>
-        {cart.map((item) => (
+        {cart?.map((item) => (
           <ItemCart
             key={item.id}
             item={item}
@@ -54,7 +54,7 @@ export function Cart () {
             reduceItemFromCart={() => reduceItemFromCart(item)}
           />
         ))}
-        {cart.length > 0
+        {cart?.length > 0
           ? (
             <footer className='self-center'>
               <button

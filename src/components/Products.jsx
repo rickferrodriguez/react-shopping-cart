@@ -51,7 +51,7 @@ export function ItemProducts ({ product, addToCart, isProductInCart, removeFromC
 
 export function Products ({ products }) {
   const { addToCart, cart, removeFromCart } = useCart()
-  const checkProductInCart = (product) => cart.some(item => item.id === product.id)
+  const checkProductInCart = (product) => cart?.some(item => item.id === product.id)
   const hasProducts = products?.length > 0
   return (
     <main className='flex justify-center'>
@@ -70,7 +70,7 @@ export function Products ({ products }) {
                 addToCart(product)
               }}
               isProductInCart={isProductInCart}
-              removeFromCart={() => removeFromCart(product)}
+              removeFromCart={() => { removeFromCart(product) }}
             />
           )
         })

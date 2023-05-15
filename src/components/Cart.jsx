@@ -36,7 +36,7 @@ export function Cart () {
   return (
     <section>
       <label
-        className='absolute bg-sky-400 rounded-full p-2 top-3 right-4 z-10 hover:scale-110 hover:cursor-pointer'
+        className='absolute bg-sky-400 rounded-full p-2 top-3 right-4 z-10 hover:scale-110 hover:cursor-pointer lg:right-[450px]'
         htmlFor={cartCheckboxId}
       >
         {' '}
@@ -45,7 +45,7 @@ export function Cart () {
       <input className='peer' type='checkbox' id={cartCheckboxId} hidden />
 
       <aside className='peer-checked:flex flex-col gap-7 rounded-l-2xl hidden w-[320px] bg-sky-700 h-full px-2 absolute top-0 right-0 lg:w-[500px]'>
-        <h2 className='font-amulya text-2xl mt-6'>Order Summary</h2>
+        <h2 className='font-amulya text-2xl mt-6 lg:text-center lg:mt-[50px]'>Order Summary</h2>
         <ul className='grid gap-1'>
           {cart?.map((item) => (
             <ItemCart

@@ -36,8 +36,8 @@ export const cartReducer = (state, action) => {
           quantity: 1
         }
       ]
-
       updateLocalStorage(newCart)
+
       return newCart
     }
 

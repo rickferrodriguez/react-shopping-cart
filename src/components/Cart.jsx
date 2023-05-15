@@ -6,8 +6,8 @@ export function ItemCart ({ item, addToCart, reduceItemFromCart }) {
   const { title, price, thumbnail, quantity } = item
   return (
     <li className='flex gap-2 border-gray-300 pb-2 border-b-2'>
-      <img className='w-[120px]' src={thumbnail} alt={title} />
-      <section className='grid w-[150px]'>
+      <img className='w-[120px] aspect-video object-cover' src={thumbnail} alt={title} />
+      <section className='flex flex-grow flex-col w-[150px]'>
         <strong>{title}</strong>
         <span className='font-amulya text-lg'>
           $ {price}
@@ -44,16 +44,19 @@ export function Cart () {
       </label>
       <input className='peer' type='checkbox' id={cartCheckboxId} hidden />
 
-      <aside className='peer-checked:flex flex-col gap-7 rounded-l-2xl hidden w-[320px] bg-sky-700 h-full px-2 absolute top-0 right-0'>
+      <aside className='peer-checked:flex flex-col gap-7 rounded-l-2xl hidden w-[320px] bg-sky-700 h-full px-2 absolute top-0 right-0 lg:w-[500px]'>
         <h2 className='font-amulya text-2xl mt-6'>Order Summary</h2>
-        {cart?.map((item) => (
-          <ItemCart
-            key={item.id}
-            item={item}
-            addToCart={() => addToCart(item)}
-            reduceItemFromCart={() => reduceItemFromCart(item)}
-          />
-        ))}
+        <ul className='grid gap-1'>
+          {cart?.map((item) => (
+            <ItemCart
+              key={item.id}
+              item={item}
+              addToCart={() => addToCart(item)}
+              reduceItemFromCart={() => reduceItemFromCart(item)}
+            />
+          ))}
+
+        </ul>
         {cart?.length > 0
           ? (
             <footer className='self-center'>

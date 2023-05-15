@@ -24,8 +24,8 @@ export function Filters () {
   }
 
   return (
-    <section className='flex justify-between'>
-      <div className='grid gap-2'>
+    <section className='flex justify-between w-[700px]'>
+      <div className='grid gap-2 '>
         <label htmlFor={minPriceFilterId}>Min. Price:</label>
         <div className='flex gap-2 items-center'>
           <input
